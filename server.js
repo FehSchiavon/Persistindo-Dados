@@ -6,3 +6,4 @@
 // Try find solution Postbird
 
 // Read for all post Rocketseat
+// Try unintall to next intall 
