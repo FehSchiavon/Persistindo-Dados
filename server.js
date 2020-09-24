@@ -1,11 +1,3 @@
-// Aprendendo mais de dados
-// Instalando PostgreSQL
-// tar.gz  and run
+// Agora foi Postgres e Posrbird
 
-// Try to install 
-// Try find solution Postbird
-
-// Read for all post Rocketseat
-// Try unintall to next intall 
-
-// Post to Forum
+// Criando o banco e tabela de instrutores
