@@ -28,6 +28,15 @@ module.exports = {
         return
     },
     put(req, res) {
+        const keys = Object.keys(req.body)
+
+        for (key of keys) {
+            // req.body.avartar_url é igual req.body[key]
+            if (req.body[key] == "") {
+                return res.send('Please, fill all fields')
+            }
+        }
+
         return
     },
     delete(req, res) {
