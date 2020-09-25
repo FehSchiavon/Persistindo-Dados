@@ -1,5 +1,40 @@
 const { age, date } = require('../../lib/utils')
 
+module.exports = { 
+    index(req, res) {
+        return res.render('instructors/index', { instructors: data.instructors })
+    },
+    create(req, res) {
+        return res.render('instructors/create')
+    },
+    post(req, res) {
+        const keys = Object.keys(req.body)
+
+        for (key of keys) {
+            // req.body.avartar_url é igual req.body[key]
+            if (req.body[key] == "") {
+                return res.send('Please, fill all fields')
+            }
+        }
+        
+        let { avatar_url, birth, name, services, gender } = req.body
+        
+        return
+    },
+    show(req, res) {
+
+    },
+    edit(req, res) {
+
+    },
+    put(req, res) {
+
+    },
+    delete(req, res) {
+
+    },
+}
+
 exports.index = function(req, res) {
     return res.render('instructors/index', { instructors: data.instructors })
 }
