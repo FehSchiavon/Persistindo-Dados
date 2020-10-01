@@ -17,7 +17,19 @@ module.exports = {
             }
         }
         
-        let { avatar_url, birth, name, services, gender } = req.body
+        const query = `
+            INSERT INTO instructos (
+                name,
+                avatar_url,
+                gender,
+                services,
+                birth,
+                created_at
+            ) VALUE ($1, $2, $3, $4, $5, $6)
+            RETURNING id
+        `
+
+        const values
         
         return
     },
