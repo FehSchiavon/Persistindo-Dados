@@ -1,4 +1,5 @@
 const { age, date } = require('../../lib/utils')
+const db = require('../../lib/utils')
 
 module.exports = { 
     index(req, res) {
@@ -18,7 +19,7 @@ module.exports = {
         }
         
         const query = `
-            INSERT INTO instructos (
+            INSERT INTO instructors (
                 name,
                 avatar_url,
                 gender,
@@ -38,7 +39,11 @@ module.exports = {
             data(Date.now()).iso
         ]
         
-        return
+        db.query(query, values, function(err, results) {
+            console.log(err)
+            console.log(results)
+            return
+        })
     },
     show(req, res) {
         return
