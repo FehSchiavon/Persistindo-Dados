@@ -29,7 +29,14 @@ module.exports = {
             RETURNING id
         `
 
-        const values
+        const values = [
+            req.body.name,
+            req.body.avatar_url,
+            req.body.gender,
+            req.body.services,
+            data(req.body.birth).iso,
+            data(Date.now()).iso
+        ]
         
         return
     },
