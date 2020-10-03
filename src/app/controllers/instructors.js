@@ -12,7 +12,6 @@ module.exports = {
         const keys = Object.keys(req.body)
 
         for (key of keys) {
-            // req.body.avartar_url é igual req.body[key]
             if (req.body[key] == "") {
                 return res.send('Please, fill all fields')
             }
@@ -26,7 +25,7 @@ module.exports = {
                 services,
                 birth,
                 created_at
-            ) VALUE ($1, $2, $3, $4, $5, $6)
+            ) VALUES ($1, $2, $3, $4, $5, $6)
             RETURNING id
         `
 
@@ -35,8 +34,8 @@ module.exports = {
             req.body.avatar_url,
             req.body.gender,
             req.body.services,
-            data(req.body.birth).iso,
-            data(Date.now()).iso
+            date(req.body.birth).iso,
+            date(Date.now()).iso
         ]
         
         db.query(query, values, function(err, results) {
