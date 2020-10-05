@@ -1,11 +1,11 @@
 const { age, date } = require('../../lib/utils')
 const db = require('../../config/db')
+const Instructor = require('../models/instructor')
 
 module.exports = { 
     index(req, res) {
-        db.query(`SELECT * FROM instructors`, function(err, results) {
-            if(err) return res.send('Database Error!')
-            return res.render('instructors/index', {instructors: results.rows})
+        Instructor.all(function(instructors) {
+            return res.render('instructor/index', { instructors })
         })
     },
     create(req, res) {
