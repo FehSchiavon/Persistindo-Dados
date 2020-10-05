@@ -1,9 +1,12 @@
 const { age, date } = require('../../lib/utils')
 const db = require('../../config/db')
+const Instructor = require('../models/instructor')
 
 module.exports = { 
     index(req, res) {
-        return res.render('instructors/index')
+        Instructor.all(function(instructors) {
+            return res.render('instructor/index', { instructors })
+        })
     },
     create(req, res) {
         return res.render('instructors/create')
