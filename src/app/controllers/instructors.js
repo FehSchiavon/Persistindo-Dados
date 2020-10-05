@@ -5,8 +5,8 @@ module.exports = {
     index(req, res) {
         db.query(`SELECT * FROM instructors`, function(err, results) {
             if(err) return res.send('Database Error!')
+            return res.render('instructors/index', {instructors: results.rows})
         })
-        return res.render('instructors/index', {instructors: results.rows})
     },
     create(req, res) {
         return res.render('instructors/create')
