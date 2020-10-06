@@ -1,4 +1,3 @@
-const { age, date } = require('../../lib/utils')
 const Instructor = require('../models/instructor')
 
 module.exports = { 
