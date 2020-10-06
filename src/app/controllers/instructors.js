@@ -3,7 +3,7 @@ const Instructor = require('../models/instructor')
 module.exports = { 
     index(req, res) {
         Instructor.all(function(instructors) {
-            return res.render('instructor/index', { instructors })
+            return res.render('instructors/index', { instructors })
         })
     },
     create(req, res) {
@@ -17,7 +17,7 @@ module.exports = {
                 return res.send('Please, fill all fields')
             }
         }
-        
+
         Instructor.create(req.body, function(instructor) {
             return res.redirect(`/instructors/${instructor.id}`)
         })
