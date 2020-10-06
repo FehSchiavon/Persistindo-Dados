@@ -9,15 +9,7 @@ module.exports = {
             callback(results.rows)
         })
     },
-    create(data, callback) {
-        const keys = Object.keys(req.body)
-
-        for (key of keys) {
-            if (req.body[key] == "") {
-                return res.send('Please, fill all fields')
-            }
-        }
-        
+    create(data, callback) {        
         const query = `
             INSERT INTO instructors (
                 name,

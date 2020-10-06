@@ -10,6 +10,14 @@ module.exports = {
         return res.render('instructors/create')
     },
     post(req, res) {
+        const keys = Object.keys(req.body)
+
+        for (key of keys) {
+            if (req.body[key] == "") {
+                return res.send('Please, fill all fields')
+            }
+        }
+        
         Instructor.create(req.body, function(instructor) {
             return res.redirect(`/instructors/${instructor.id}`)
         })
