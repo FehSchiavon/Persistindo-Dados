@@ -23,6 +23,10 @@ module.exports = {
         })
     },
     show(req, res) {
+        Instructor.find(req.params.id, function(instructor) {
+            if (!instructor) return res.send('Instructor not found!')
+            
+        })
         return
     },
     edit(req, res) {
