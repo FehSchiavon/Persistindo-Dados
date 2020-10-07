@@ -27,6 +27,10 @@ module.exports = {
         Instructor.find(req.params.id, function(instructor) {
             if (!instructor) return res.send('Instructor not found!')
 
+            instructor.age = age(instructor.birth)
+            instructor.services = instructor.services.split(',')
+
+            
         })
         return
     },
