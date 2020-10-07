@@ -1,3 +1,4 @@
+const { age } = require('../../lib/utils')
 const Instructor = require('../models/instructor')
 
 module.exports = { 
@@ -25,7 +26,7 @@ module.exports = {
     show(req, res) {
         Instructor.find(req.params.id, function(instructor) {
             if (!instructor) return res.send('Instructor not found!')
-            
+
         })
         return
     },

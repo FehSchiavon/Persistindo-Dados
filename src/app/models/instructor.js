@@ -1,5 +1,5 @@
 const db = require('../../config/db')
-const { age, date } = require('../../lib/utils')
+const { date } = require('../../lib/utils')
 
 
 module.exports = {
