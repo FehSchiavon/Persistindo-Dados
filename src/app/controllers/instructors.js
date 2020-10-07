@@ -1,4 +1,4 @@
-const { age } = require('../../lib/utils')
+const { age, date } = require('../../lib/utils')
 const Instructor = require('../models/instructor')
 
 module.exports = { 
@@ -30,7 +30,9 @@ module.exports = {
             instructor.age = age(instructor.birth)
             instructor.services = instructor.services.split(',')
 
-            
+            instructor.created_at = date(instructor.created_at.format)
+
+            return res.render('instructors/show', { instructor })
         })
         return
     },
