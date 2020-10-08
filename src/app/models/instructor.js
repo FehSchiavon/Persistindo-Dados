@@ -44,5 +44,25 @@ module.exports = {
             if(err) return res.send("Database Error!")
             callback(results.rows[0])
         })
+    },
+    update(data, callback) {
+        const query = `
+            UPDATE instructors SET
+            avatar_url=($1),
+            name=($2),
+            birth=($3),
+            gender=($4),
+            services=($5)
+            WHERE id = ($6)
+        `
+
+        const values = [
+            data.avatar_url,
+            data.name,
+            data.birth,
+            data.gender,
+            data.services,
+            data.id
+        ]
     }
 }
