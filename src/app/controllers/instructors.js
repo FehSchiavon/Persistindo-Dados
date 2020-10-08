@@ -50,13 +50,14 @@ module.exports = {
         const keys = Object.keys(req.body)
 
         for (key of keys) {
-            // req.body.avartar_url é igual req.body[key]
             if (req.body[key] == "") {
                 return res.send('Please, fill all fields')
             }
         }
 
-        return
+        Instructor.update(req.body, function() {
+            return res.redirect(`/instructors/${req.body.id}`)
+        })
     },
     delete(req, res) {
         return
