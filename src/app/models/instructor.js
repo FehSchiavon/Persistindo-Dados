@@ -64,5 +64,10 @@ module.exports = {
             data.services,
             data.id
         ]
+
+        db.query(query, values, function(err, results) {
+            if(err) return res.send("Database Error!")
+            callback()
+        })
     }
 }
