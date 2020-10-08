@@ -34,7 +34,6 @@ module.exports = {
 
             return res.render('instructors/show', { instructor })
         })
-        return
     },
     edit(req, res) {
         return
