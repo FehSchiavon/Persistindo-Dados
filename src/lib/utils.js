@@ -24,7 +24,6 @@ module.exports = {
             // Day
             const day = `0${date.getUTCDate()}`.slice(-2)
 
-            // Year / Month / Day
             return {
                 day,
                 month,
