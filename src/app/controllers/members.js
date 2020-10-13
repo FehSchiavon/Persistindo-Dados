@@ -4,12 +4,12 @@ const Member = require('../models/Member')
 
 module.exports = { 
     index(req, res) {
-        Instructor.all(function(instructors) {
-            return res.render('instructors/index', { instructors })
+        Member.all(function(members) {
+            return res.render('members/index', { members })
         })
     },
     create(req, res) {
-        return res.render('instructors/create')
+        return res.render('members/create')
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -20,30 +20,30 @@ module.exports = {
             }
         }
 
-        Instructor.create(req.body, function(instructor) {
-            return res.redirect(`/instructors/${instructor.id}`)
+        Member.create(req.body, function(member) {
+            return res.redirect(`/members/${member.id}`)
         })
     },
     show(req, res) {
-        Instructor.find(req.params.id, function(instructor) {
-            if (!instructor) return res.send('Instructor not found!')
+        Member.find(req.params.id, function(member) {
+            if (!member) return res.send('Member not found!')
 
-            instructor.age = age(instructor.birth)
-            instructor.services = instructor.services.split(',')
+            member.age = age(member.birth)
+            member.services = member.services.split(',')
 
-            instructor.created_at = date(instructor.created_at.format)
+            member.created_at = date(member.created_at.format)
 
-            return res.render('instructors/show', { instructor })
+            return res.render('members/show', { member })
         })
 
     },
     edit(req, res) {
-        Instructor.find(req.params.id, function(instructor) {
-            if (!instructor) return res.send('Instructor not found!')
+        Member.find(req.params.id, function(member) {
+            if (!member) return res.send('Member not found!')
 
-            instructor.birth = date(instructor.birth).iso
+            member.birth = date(member.birth).iso
 
-            return res.render('instructors/edit', { instructor })
+            return res.render('members/edit', { member })
         })
 
     },
@@ -56,13 +56,13 @@ module.exports = {
             }
         }
 
-        Instructor.update(req.body, function() {
-            return res.redirect(`/instructors/${req.body.id}`)
+        Member.update(req.body, function() {
+            return res.redirect(`/members/${req.body.id}`)
         })
     },
     delete(req, res) {
-        Instructor.delete(req.body.id, function() {
-            return res.redirect(`/instructors`)
+        Member.delete(req.body.id, function() {
+            return res.redirect(`/members`)
         })
     },
 }
