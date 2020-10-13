@@ -1,4 +1,6 @@
 const { age, date } = require('../../lib/utils')
+const Member = require('../models/Member')
+
 
 module.exports = { 
     index(req, res) {
