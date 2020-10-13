@@ -28,7 +28,7 @@ module.exports = {
         Member.find(req.params.id, function(member) {
             if (!member) return res.send('Member not found!')
 
-            member.age = age(member.birth)
+            member.birth = date(member.birth).birthDay
             member.services = member.services.split(',')
 
             member.created_at = date(member.created_at.format)
