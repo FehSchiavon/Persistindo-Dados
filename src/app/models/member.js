@@ -15,10 +15,12 @@ module.exports = {
                 name,
                 avatar_url,
                 gender,
-                services,
+                email,
                 birth,
-                created_at
-            ) VALUES ($1, $2, $3, $4, $5, $6)
+                blood,
+                weight,
+                height
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
             RETURNING id
         `
 
@@ -26,9 +28,11 @@ module.exports = {
             data.name,
             data.avatar_url,
             data.gender,
-            data.services,
+            data.email,
             date(data.birth).iso,
-            date(Date.now()).iso
+            data.blood,
+            data.weight,
+            data.height
         ]
         
         db.query(query, values, function(err, results) {
@@ -51,8 +55,11 @@ module.exports = {
             name=($2),
             birth=($3),
             gender=($4),
-            services=($5)
-            WHERE id = ($6)
+            email=($5),
+            blood=($6),
+            weight=($7),
+            height=($8),
+            WHERE id = ($9)
         `
 
         const values = [
