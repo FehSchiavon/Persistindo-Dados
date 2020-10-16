@@ -50,7 +50,7 @@ module.exports = {
     },
     update(data, callback) {
         const query = `
-            UPDATE members SET
+        UPDATE members SET
             avatar_url=($1),
             name=($2),
             birth=($3),
@@ -58,8 +58,8 @@ module.exports = {
             email=($5),
             blood=($6),
             weight=($7),
-            height=($8),
-            WHERE id = ($9)
+            height=($8)
+        WHERE id = ($9)
         `
 
         const values = [
