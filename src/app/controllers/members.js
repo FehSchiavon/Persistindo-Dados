@@ -31,8 +31,6 @@ module.exports = {
             member.birth = date(member.birth).birthDay
             member.blood = blood(member.blood)
 
-            // member.created_at = date(member.created_at.format)
-
             return res.render('members/show', { member })
         })
 
