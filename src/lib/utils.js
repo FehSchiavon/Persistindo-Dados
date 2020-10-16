@@ -31,7 +31,6 @@ module.exports = {
             }
     },
     blood(member) {
-        console.log(member)
 
         if ('A1' == member) {
             member = 'A+'
@@ -47,7 +46,7 @@ module.exports = {
             member = 'O+'
         } else if ('O0' == member) {
             member = 'O-'
-        } 
+        } return member
             
     }
 }
