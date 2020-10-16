@@ -30,23 +30,23 @@ module.exports = {
                 format: `${day}/${month}/${year}`
             }
     },
-    blood(members) {
-        const converterBlood = members.find(function(member) {
-            if ('A1' == member.blood) {
-                member.blood = 'A+'
-            } else if ('A0' == member.blood) {
-                member.blood = 'A-'
-            } else if ('B1' == member.blood) {
-                member.blood = 'B+'
-            } else if ('B2' == member.blood) {
-                member.blood = 'B-'
-            } else if ('AB1' == member.blood) {
-                member.blood = 'AB+'
-            } else if ('O1' == member.blood) {
-                member.blood = 'O+'
-            } else if ('O0' == member.blood) {
-                member.blood = 'O-'
-            } return blood 
-            })
-        }
+    blood(member) {
+
+        if ('A1' == member) {
+            member = 'A+'
+        } else if ('A0' == member) {
+            member = 'A-'
+        } else if ('B1' == member) {
+            member = 'B+'
+        } else if ('B2' == member) {
+            member = 'B-'
+        } else if ('AB1' == member) {
+            member = 'AB+'
+        } else if ('O1' == member) {
+            member = 'O+'
+        } else if ('O0' == member) {
+            member = 'O-'
+        } return member
+            
+    }
 }
