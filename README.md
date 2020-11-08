@@ -3,3 +3,4 @@
 ## How to install Postbird
 
 
+[npm install]
