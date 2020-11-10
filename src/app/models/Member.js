@@ -84,5 +84,11 @@ module.exports = {
             if(err) throw `Database Error! ${err}`
             return callback()
         })
-    } 
+    },
+    instructorsSelectOptions(callback) {
+        db.query(`SELECT name, id FROM instructors`, function(err, results) {
+            if (err) throw 'Database Error!'
+            callback(results.rows)
+        })
+    }
 }
