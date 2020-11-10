@@ -3,6 +3,8 @@ const routes = express.Router()
 const instructors = require('./app/controllers/instructors')
 const members = require('./app/controllers/members')
 
+// Consumindo duas tablas
+
 routes.get('/', function(req, res) {
     return res.redirect('/instructors')
 })
