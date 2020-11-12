@@ -34,7 +34,7 @@ module.exports = {
             data.blood,
             data.weight,
             data.height,
-            data.instructor
+            data.instructor_id
         ]
         
         db.query(query, values, function(err, results) {
@@ -43,9 +43,10 @@ module.exports = {
         })
     },
     find(id, callback) {
-        db.query(`SELECT * 
+        db.query(`SELECT members.*, instructors.name AS instructor_name 
         FROM members 
-        WHERE id = $1`, [id], function(err, results) {
+        LEFT JOIN instructors ON (members.instructor_id = instructors.id)
+        WHERE members.id = $1`, [id], function(err, results) {
             if(err) throw `Database Error! ${err}`
             callback(results.rows[0])
         })
@@ -74,6 +75,7 @@ module.exports = {
             data.blood,
             data.weight,
             data.height,
+            data.instructor_id,
             data.id
         ]
 
