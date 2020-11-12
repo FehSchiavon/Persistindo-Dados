@@ -75,6 +75,7 @@ module.exports = {
             data.blood,
             data.weight,
             data.height,
+            data.instructor_id,
             data.id
         ]
 
