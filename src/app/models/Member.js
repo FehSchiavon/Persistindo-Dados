@@ -43,10 +43,10 @@ module.exports = {
         })
     },
     find(id, callback) {
-        db.query(`SELECT *, instructor.name AS instructor_name 
+        db.query(`SELECT members.*, instructor.name AS instructor_name 
         FROM members 
         LEFT JOIN instructors ON (members.instructor_id = instructors.id)
-        WHERE id = $1`, [id], function(err, results) {
+        WHERE member.id = $1`, [id], function(err, results) {
             if(err) throw `Database Error! ${err}`
             callback(results.rows[0])
         })
