@@ -268,5 +268,15 @@ td:last-child {
 }
 
 .table-container .header a {
-    
+
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+}
+
+.table-container .header form button {
+    margin: 0px;
 }
