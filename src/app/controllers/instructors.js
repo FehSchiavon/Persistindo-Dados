@@ -7,7 +7,10 @@ module.exports = {
         const { filter } = req.query
 
         if ( filter ) {
-            Instructor.findBy()
+            Instructor.findBy(filter, function(instructors) {
+                return res.render('instructors/index', { instructors })
+
+            })
         } else {
             Instructor.all(function(instructors) {
                 return res.render('instructors/index', { instructors })
