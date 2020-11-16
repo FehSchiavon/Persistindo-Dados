@@ -3,6 +3,10 @@ const Instructor = require('../models/Instructor')
 
 module.exports = { 
     index(req, res) {
+        console.log(req.query)
+        const { filter } = req.query
+
+        
         Instructor.all(function(instructors) {
             return res.render('instructors/index', { instructors })
         })
