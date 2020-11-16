@@ -6,10 +6,14 @@ module.exports = {
         console.log(req.query)
         const { filter } = req.query
 
+        if ( filter ) {
+            Instructor.findBy()
+        } else {
+            Instructor.all(function(instructors) {
+                return res.render('instructors/index', { instructors })
+            })
+        }
         
-        Instructor.all(function(instructors) {
-            return res.render('instructors/index', { instructors })
-        })
     },
     create(req, res) {
         return res.render('instructors/create')
