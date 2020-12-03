@@ -4,7 +4,12 @@ const Instructor = require('../models/Instructor')
 module.exports = { 
     index(req, res) {
         console.log(req.query)
-        const { filter } = req.query
+        let { filter, page, limit } = req.query
+
+        page = page || 1
+        limit = limit || 2
+
+        
 
         // if ( filter ) {
         //     Instructor.findBy(filter, function(instructors) {
