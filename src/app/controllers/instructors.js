@@ -8,8 +8,14 @@ module.exports = {
 
         page = page || 1
         limit = limit || 2
+        let offset = limit * (page - 1)
 
-        
+        const params = {
+            filter,
+            page,
+            limit,
+            offset
+        }
 
         // if ( filter ) {
         //     Instructor.findBy(filter, function(instructors) {
