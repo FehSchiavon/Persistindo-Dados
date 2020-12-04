@@ -14,8 +14,13 @@ module.exports = {
             filter,
             page,
             limit,
-            offset
+            offset,
+            callback(instructors) {
+
+            }
         }
+
+        Instructor.paginate(params)
 
         // if ( filter ) {
         //     Instructor.findBy(filter, function(instructors) {
