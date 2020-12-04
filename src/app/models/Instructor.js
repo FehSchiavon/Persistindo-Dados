@@ -98,5 +98,12 @@ module.exports = {
 
         let query = `SELECT * FROM instructors`
 
+        if (filter) {
+            query = `${query}
+            WHERE instructors.name ILIKE '%${filter}%'
+            OR instructors.services ILIKE '%${filter}%'
+            `
+        }
+
     }
 }
