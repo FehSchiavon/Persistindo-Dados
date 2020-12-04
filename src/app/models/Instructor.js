@@ -92,5 +92,11 @@ module.exports = {
             if(err) throw `Database Error! ${err}`
             return callback()
         })
-    } 
+    },
+    paginate(params) {
+        const { filter, limit, offset, callback } = params
+
+        let query = `SELECT * FROM instructors`
+
+    }
 }
