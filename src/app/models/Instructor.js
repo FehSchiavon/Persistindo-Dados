@@ -111,5 +111,11 @@ module.exports = {
         query = `${query}
         GROUP BY instructors.id LIMIT $1 OFFSET $2
         `
+
+        db.query(query, [limit, offset], function(err, results) {
+            if (err) throw 'Database Error!'
+
+            callback(results.rows)
+        })
     }
 }
