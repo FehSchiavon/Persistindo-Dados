@@ -108,5 +108,8 @@ module.exports = {
             `
         }
 
+        query = `${query}
+        GROUP BY instructors.id LIMIT $1 OFFSET $2
+        `
     }
 }
