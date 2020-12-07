@@ -16,7 +16,7 @@ module.exports = {
             limit,
             offset,
             callback(instructors) {
-
+                return res.render("instructors/index", { instructors, filter })
             }
         }
 
