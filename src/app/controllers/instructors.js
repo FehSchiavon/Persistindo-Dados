@@ -5,11 +5,11 @@ module.exports = {
     index(req, res) {
         console.log(req.query)
         let { filter, page, limit } = req.query
-
+        
         page = page || 1
         limit = limit || 2
         let offset = limit * (page - 1)
-
+        
         const params = {
             filter,
             page,
@@ -19,6 +19,7 @@ module.exports = {
                 return res.render("instructors/index", { instructors, filter })
             }
         }
+        console.log(params)
 
         Instructor.paginate(params)
 
