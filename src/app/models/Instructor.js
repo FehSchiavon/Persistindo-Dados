@@ -1,7 +1,6 @@
 const db = require('../../config/db')
 const { date } = require('../../lib/utils')
 
-
 module.exports = {
     all(callback) {
         db.query(`
@@ -99,7 +98,7 @@ module.exports = {
         let query = `
         SELECT instructors.*, count(members) as total_students 
         FROM instructors
-        LEFT JOIN members ON (instructors.id = members.instructors_id)`
+        LEFT JOIN members ON (instructors.id = members.instructor_id)`
 
         if (filter) {
             query = `${query}
