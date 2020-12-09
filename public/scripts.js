@@ -7,3 +7,7 @@ for (item of menuItems) {
     }
 }
 
+// Paginação
+
+let totalPage = 20,
+    selectedPage = 15
