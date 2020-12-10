@@ -13,4 +13,6 @@ let totalPage = 20,
     selectedPage = 15.
     pages = []
 
-for()
+for(let currentPage = 0; currentPage < totalPage; currentPage++) {
+    
+}
