@@ -9,5 +9,16 @@ for (item of menuItems) {
 
 // Paginação
 
-let totalPage = 20,
-    selectedPage = 15
+let totalPages = 20,
+    selectedPage = 15.
+    pages = []
+
+for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
+    pages.push(currentPage)
+
+    if(currentPage == 1 || currentPage == totalPages) {
+        pages.push(currentPage)
+    }
+}
+
+console.log(pages)
