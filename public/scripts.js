@@ -16,6 +16,11 @@ let totalPages = 20,
 for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
     pages.push(currentPage)
 
+    const pagesAfterSelectedPage = currentPage <= selectedPage + 2
+    const 
+
+    selectedPage - 2
+
     if(currentPage == 1 || currentPage == totalPages) {
         pages.push(currentPage)
     }
