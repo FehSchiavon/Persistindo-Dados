@@ -24,9 +24,9 @@ for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
     if(firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage) {
         
         if (oldPage && currentPage - oldPage > 2) {
-            
+            pages.push("...")
         }
-        
+
         pages.push(currentPage)
         
         oldPage = currentPage
