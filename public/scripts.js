@@ -10,7 +10,7 @@ for (item of menuItems) {
 // Paginação
 
 let totalPages = 20,
-    selectedPage = 15.
+    selectedPage = 15,
     pages = [],
     oldPage
 
