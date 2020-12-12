@@ -10,19 +10,26 @@ for (item of menuItems) {
 // Paginação
 
 let totalPages = 20,
-    selectedPage = 15.
-    pages = []
+    selectedPage = 15,
+    pages = [],
+    oldPage
 
 for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
     pages.push(currentPage)
 
+    const firstAndLastPage = currentPage == 1 || currentPage == totalPages
     const pagesAfterSelectedPage = currentPage <= selectedPage + 2
-    const 
+    const pagesBeforeSelectedPage = currentPage >= selectedPage - 2
 
-    selectedPage - 2
+    if(firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage) {
+        
+        if (oldPage && currentPage - oldPage > 2) {
+            pages.push("...")
+        }
 
-    if(currentPage == 1 || currentPage == totalPages) {
         pages.push(currentPage)
+        
+        oldPage = currentPage
     }
 }
 
