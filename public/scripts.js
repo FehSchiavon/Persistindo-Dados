@@ -26,6 +26,10 @@ for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
             pages.push("...")
         }
 
+        if (oldPage && currentPage - oldPage == 2) {
+            pages.push(oldPage + 1)
+        }
+
         pages.push(currentPage)
         
         oldPage = currentPage
