@@ -10,12 +10,11 @@ for (item of menuItems) {
 // Paginação
 
 let totalPages = 20,
-    selectedPage = 15,
+    selectedPage = 16,
     pages = [],
     oldPage
 
 for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
-    pages.push(currentPage)
 
     const firstAndLastPage = currentPage == 1 || currentPage == totalPages
     const pagesAfterSelectedPage = currentPage <= selectedPage + 2
