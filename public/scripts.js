@@ -7,30 +7,31 @@ for (item of menuItems) {
     }
 }
 
-// Paginação
+function pagination(selectedPage, totalPages) {
 
-let totalPages = 20,
-    selectedPage = 15,
-    pages = [],
-    oldPage
+    let pages = [],
+        oldPage
 
-for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
-    pages.push(currentPage)
+    for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
 
-    const firstAndLastPage = currentPage == 1 || currentPage == totalPages
-    const pagesAfterSelectedPage = currentPage <= selectedPage + 2
-    const pagesBeforeSelectedPage = currentPage >= selectedPage - 2
+        const firstAndLastPage = currentPage == 1 || currentPage == totalPages
+        const pagesAfterSelectedPage = currentPage <= selectedPage + 2
+        const pagesBeforeSelectedPage = currentPage >= selectedPage - 2
 
-    if(firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage) {
-        
-        if (oldPage && currentPage - oldPage > 2) {
-            pages.push("...")
+        if(firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage) {
+            if (oldPage && currentPage - oldPage > 2) {
+                pages.push("...")
+            }
+
+            if (oldPage && currentPage - oldPage == 2) {
+                pages.push(oldPage + 1)
+            }
+
+            pages.push(currentPage)
+            
+            oldPage = currentPage
         }
-
-        pages.push(currentPage)
-        
-        oldPage = currentPage
     }
-}
 
-console.log(pages)
+    console.log(pages)
+}
