@@ -7,13 +7,10 @@ for (item of menuItems) {
     }
 }
 
-// Paginação
+function pagination(selectedPage, totalPages) {
 
-function pagination() {
-    let totalPages = 20,
-    selectedPage = 6,
-    pages = [],
-    oldPage
+    let pages = [],
+        oldPage
 
     for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
 
