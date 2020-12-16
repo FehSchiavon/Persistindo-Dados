@@ -98,7 +98,7 @@ module.exports = {
         let query = "",
             filterQuery = "",
             totalQuery = `(
-                SELECT * FROM instructors
+                SELECT count(*) FROM instructors
             ) AS total`
 
         let query = `
@@ -107,10 +107,15 @@ module.exports = {
         LEFT JOIN members ON (instructors.id = members.instructor_id)`
 
         if (filter) {
-            query = `${query}
+            filterQuery = `
             WHERE instructors.name ILIKE '%${filter}%'
             OR instructors.services ILIKE '%${filter}%'
             `
+
+            totalQuery = `(
+                SELECT count(*) FROM instructors
+                ${filterQuery}
+            )`
         }
 
         query = `${query}
