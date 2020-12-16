@@ -95,6 +95,10 @@ module.exports = {
     paginate(params) {
         const { filter, limit, offset, callback } = params
 
+        let query = "",
+            filterQuery = "",
+            totalQuery = ""
+
         let query = `
         SELECT instructors.*, (
             SELECT * FROM instructors
