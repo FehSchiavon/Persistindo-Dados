@@ -97,12 +97,12 @@ module.exports = {
 
         let query = "",
             filterQuery = "",
-            totalQuery = ""
+            totalQuery = `(
+                SELECT * FROM instructors
+            ) AS total`
 
         let query = `
-        SELECT instructors.*, (
-            SELECT * FROM instructors
-        ) AS total, count(members) AS total_students 
+        SELECT instructors.*, , count(members) AS total_students 
         FROM instructors
         LEFT JOIN members ON (instructors.id = members.instructor_id)`
 
