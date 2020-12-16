@@ -23,7 +23,7 @@ module.exports = {
                     page
                 }
 
-                return res.render("instructors/index", { instructors, })
+                return res.render("instructors/index", { instructors,  })
             }
         }
         console.log(params)

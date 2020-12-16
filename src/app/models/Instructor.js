@@ -96,7 +96,9 @@ module.exports = {
         const { filter, limit, offset, callback } = params
 
         let query = `
-        SELECT instructors.*, count(members) as total_students 
+        SELECT instructors.*, (
+            SELECT * FROM instructors
+        ) AS total, count(members) AS total_students 
         FROM instructors
         LEFT JOIN members ON (instructors.id = members.instructor_id)`
 
