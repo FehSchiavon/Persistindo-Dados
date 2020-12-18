@@ -42,3 +42,9 @@ const total = +pagination.dataset.total;
 const pages = paginate(page, total)
 
 console.log(pages)
+
+let element = ""
+
+for (let page of pages) {
+    element += `<a href="#">${page}</a>`
+}
