@@ -8,7 +8,6 @@ for (item of menuItems) {
 }
 
 function paginate(selectedPage, totalPages) {
-
     let pages = [],
         oldPage
 
@@ -32,19 +31,23 @@ function paginate(selectedPage, totalPages) {
             oldPage = currentPage
         }
     }
-
-    console.log(pages)
+    return pages
+    console.log(pages) // Dados do Array
 }
 
 const pagination = document.querySelector(".pagination")
-const page = +pagination.dataset.page;
-const total = +pagination.dataset.total;
+const page = +pagination.dataset.page
+const total = +pagination.dataset.total
 const pages = paginate(page, total)
 
-console.log(pages)
-
-let element = ""
+let elements = ""
 
 for (let page of pages) {
-    element += `<a href="#">${page}</a>`
+    if(String(page).includes("...")) {
+        elements += `<span>${page}</span>`
+    } else {
+        elements += `<a href="?page=${page}">${page}</a>`
+    }
 }
+
+pagination.innerHTML = elements

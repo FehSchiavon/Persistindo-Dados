@@ -25,11 +25,9 @@ module.exports = {
                 return res.render("instructors/index", { instructors, pagination, filter })
             }
         }
-        console.log(params)
-
+        // console.log(params)
         Instructor.paginate(params)
 
-        
     },
     create(req, res) {
         return res.render('instructors/create')
