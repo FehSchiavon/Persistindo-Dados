@@ -51,7 +51,7 @@ for (let page of pages) {
         elements += `<a href="?page=${page}">${page}</a>`
     }
 }
-
-// console.log(elements)
+console.log(elements)
 
 pagination.innerHTML = elements
+console.log(pagination.innerHTML)
