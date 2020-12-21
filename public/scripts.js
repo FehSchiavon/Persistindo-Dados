@@ -36,6 +36,7 @@ function paginate(selectedPage, totalPages) {
 }
 
 const pagination = document.querySelector(".pagination")
+const filter = pagination.dataset.filter
 const page = +pagination.dataset.page
 const total = +pagination.dataset.total
 const pages = paginate(page, total)
