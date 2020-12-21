@@ -119,9 +119,9 @@ module.exports = {
 
         query = `
         SELECT members.*, ${totalQuery}
-        FROM instructors
+        FROM members
         ${filterQuery}
-        GROUP BY instructors.id LIMIT $1 OFFSET $2
+        LIMIT $1 OFFSET $2
         `
 
         db.query(query, [limit, offset], function(err, results) {
