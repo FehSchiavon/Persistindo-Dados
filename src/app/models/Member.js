@@ -102,7 +102,7 @@ module.exports = {
         let query = "",
             filterQuery = "",
             totalQuery = `(
-                SELECT count(*) FROM member
+                SELECT count(*) FROM members
             ) AS total`
 
         if (filter) {
