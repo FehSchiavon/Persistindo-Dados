@@ -62,6 +62,6 @@ function createPagination(pagination) {
 const pagination = document.querySelector(".pagination")
 
 if (pagination) {
-    
+    createPagination(pagination)
 }
 
